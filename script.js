@@ -43,5 +43,4 @@ const switchPlayer = function () {
   player1El.classList.toggle('player--active');
 };
 
-});
 
