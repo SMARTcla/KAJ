@@ -358,3 +358,16 @@ function displayLastThreeResults() {
       }
   }
 }
+
+/**
+ * Saves the current game's score and ensures that only the results 
+ * of the last three games are stored.
+ * @param {number} currentScore - The score to be saved.
+ */
+function saveGameResult(currentScore) {
+  let gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];
+  gameResults.push(currentScore);
+  if (gameResults.length > 3) { gameResults.shift(); }
+  localStorage.setItem('gameResults', JSON.stringify(gameResults));
+}
+  
