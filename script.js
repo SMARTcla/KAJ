@@ -331,5 +331,16 @@ function stopGame() {
   logo.style.display = 'block';
 }
 
+/**
+ * Updates the high score if the current score is greater than the high score. Displays the high score.
+ */
+function updateHighScore() {
+  const currentScore = snake.length - 1;
+  if (currentScore > highScore) {
+    highScore = currentScore;
+    highScoreText.textContent = highScore.toString().padStart(3, '0');
+  }
+  highScoreText.style.display = 'block';
+}
 
 
