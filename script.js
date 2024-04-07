@@ -343,4 +343,18 @@ function updateHighScore() {
   highScoreText.style.display = 'block';
 }
 
-
+/**
+ * Displays the results of the last three games.
+ */
+function displayLastThreeResults() {
+  const gameResults = JSON.parse(localStorage.getItem('gameResults')) || [];   
+  const lastThreeResults = gameResults.slice(-3);
+  for (let i = 0; i < 3; i++) {
+      const resultP = document.getElementById(`lastGame${i + 1}`);
+      if (lastThreeResults[i] != null) {
+          resultP.textContent = `Last Game ${i + 1}: ${lastThreeResults[i]}`;
+      } else {
+          resultP.textContent = `Last Game ${i + 1}: 000`;
+      }
+  }
+}
