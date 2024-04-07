@@ -120,7 +120,16 @@ function drawFood() {
   }
 }
 
-
+/**
+ * Generates a new position for the food on the game board.
+ * 
+ * @returns {Object} An object with 'x' and 'y' properties representing the new position.
+ */
+function generateFood() {
+  const x = Math.floor(Math.random() * gridSize) + 1;
+  const y = Math.floor(Math.random() * gridSize) + 1;
+  return { x, y };
+}
 
 
 
