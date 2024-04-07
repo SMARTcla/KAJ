@@ -303,4 +303,20 @@ p {
     color: #800080; 
 }
   
+.scores {
+    text-align: center; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-radius: 10px; 
+    color: #030a37; 
+    font-size: 1.2em; 
+}
+   
+.game-border-3 {
+    background-color: #c4cfa3;
+}
+  
+.snake {
+    border: #000000 1px dotted;
+}
   
