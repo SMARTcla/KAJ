@@ -320,7 +320,16 @@ function updateScore(isInitial = false) {
   }
 }
 
-
+/**
+ * Stops the game by clearing the game interval, marking the game as not started, 
+ * and displaying the instruction and logo.
+ */
+function stopGame() {
+  clearInterval(gameInterval);
+  gameStarted = false;
+  instructionText.style.display = 'block';
+  logo.style.display = 'block';
+}
 
 
 
