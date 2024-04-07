@@ -47,7 +47,21 @@ function changeDirection(newDirection) {
   }
 }
 
-
+/**
+ * Pauses or resumes the game.
+ */
+function pauseGame() {
+  if (gameStarted && !isPaused) {
+    clearInterval(gameInterval); 
+    isPaused = true;
+    instructionText.textContent = 'Paused. Press "Pause" to resume.'; 
+    instructionText.style.display = 'block';
+  } else if (isPaused) {
+    isPaused = false;
+    gameInterval = setInterval(gameLoop, gameSpeedDelay);
+    instructionText.style.display = 'none';
+  }
+}
 
 
 
