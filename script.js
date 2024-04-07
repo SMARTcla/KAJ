@@ -165,6 +165,25 @@ function move() {
   }
 }
 
+/**
+ * Initializes the game start process. Validates player name input, shows the game board, 
+ * hides the name input form, and prepares the game for starting.
+ */
+function startGame() {
+  const playerNameInput = document.getElementById('playerName');
+  const playerName = playerNameInput.value.trim();
+  if (playerName.match(/[A-Za-z0-9]+/)) {
+      document.querySelector('.game-board').style.display = 'block';
+      document.querySelector('.form-group').style.display = 'none';
+      instructionText.style.display = 'none'; 
+      logo.style.display = 'none'; 
+      gameStarted = true; 
+      gameInterval = setInterval(gameLoop, gameSpeedDelay);
+      updateScore(true);
+  } else {
+      alert('Please enter a valid name. Only English letters and numbers allowed.');
+  }
+}
 
 
 
