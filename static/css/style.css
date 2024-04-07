@@ -154,6 +154,55 @@ body {
     border-radius: 10px;
 }
 
+button {
+    color: black; 
+    font-weight: bold; 
+    background-color: #0da00d; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    outline: none; 
+    -webkit-transition: background-color 0.3s, color 0.3s; 
+    -o-transition: background-color 0.3s, color 0.3s; 
+    transition: background-color 0.3s, color 0.3s; 
+    border: #030931 solid 2px;
+    border-radius: 10px;
+}
+  
+button:hover {
+    color: white; 
+    background-color: #8b36d6; 
+}
+
+button:active {
+    color: white; 
+    background-color: #8b36d6; 
+}
+ 
+p {
+    font-weight: bold; 
+    color: #000080; 
+}
+
+#lastGamesResults p {
+    font-weight: bold; 
+    color: #006400; 
+}
+
+
+
+.form-group, .game-board {
+    width: 100%; 
+    max-width: 600px; 
+    margin: auto; 
+}
+
+.game-board {
+    display: none; 
+    padding: 50px; 
+    -webkit-box-sizing: border-box; 
+            box-sizing: border-box; 
+}
+
 
  
 
