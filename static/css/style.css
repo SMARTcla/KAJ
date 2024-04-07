@@ -203,6 +203,24 @@ p {
             box-sizing: border-box; 
 }
 
+.snake {
+    background-color: #0b533e;
+}
+
+.game-board {
+    display: none;
+}
+
+#instruction {
+    position: absolute;
+    top: 30%;
+    color: #0d98ba; 
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    margin: 0;
+    z-index: 10; 
+}
 
  
 
