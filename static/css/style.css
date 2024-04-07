@@ -222,6 +222,28 @@ p {
     z-index: 10; 
 }
 
+#game-board {
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 5px;
+}
+
+.game-border-1 {
+    border: #030931 solid 10px;
+    border-radius: 30px;
+}
+  
+.game-border-2 {
+    border: #d7b004 solid 10px;
+    border-radius: 25px;
+}
+  
+.game-border-3 {
+    border: #032a51 solid 30px;
+    border-radius: 20px;
+}
  
 
 
