@@ -256,7 +256,18 @@ function isOppositeDirection(newDirection, currentDirection) {
            newDirection === 'right' && currentDirection === 'left';
 }
 
+document.addEventListener('keydown', handleKeyPress);
 
+/**
+ * Increases the speed of the game by decreasing 
+ * the gameSpeedDelay based on its current value.
+ */
+function increaseSpeed() {
+  if (gameSpeedDelay > 150) { gameSpeedDelay -= 5; } 
+  else if (gameSpeedDelay > 100) { gameSpeedDelay -= 3; } 
+  else if (gameSpeedDelay > 50) { gameSpeedDelay -= 2; } 
+  else if (gameSpeedDelay > 25) { gameSpeedDelay -= 1; }
+}
 
 
 
