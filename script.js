@@ -228,7 +228,20 @@ function gameLoop() {
     draw();
 }
 
-
+/**
+ * Determines the new direction of the snake based on the key pressed.
+ * @param {string} key - The key pressed by the player.
+ * @returns {string} The new direction of the snake.
+ */
+function getNewDirection(key) {
+    switch (key) {
+        case 'w': return 'up';
+        case 's': return 'down';
+        case 'a': return 'left';
+        case 'd': return 'right';
+        default: return direction; 
+    }
+}
 
 
 
