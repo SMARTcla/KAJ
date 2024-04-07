@@ -36,7 +36,16 @@ document.querySelectorAll('button').forEach(button => {
 });
 
 
-
+/**
+ * Changes the direction of the game.
+ * 
+ * @param {string} newDirection - The new direction to change to.
+ */
+function changeDirection(newDirection) {
+  if (!isOppositeDirection(newDirection, direction) && gameStarted && !isPaused) {
+    direction = newDirection;
+  }
+}
 
 
 
