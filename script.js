@@ -287,6 +287,20 @@ function checkCollision() {
   }   
 }
 
+/**
+ * Resets the game to its initial state, updating the high score 
+ * if necessary and preparing for a new game.
+ */
+function resetGame() {
+  updateHighScore();
+  stopGame();
+  snake = [{ x: 10, y: 10 }];
+  food = generateFood();
+  direction = 'right';
+  gameSpeedDelay = 200;
+  updateScore();
+  displayLastThreeResults(); 
+}
 
 
 
