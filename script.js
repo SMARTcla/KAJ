@@ -243,6 +243,18 @@ function getNewDirection(key) {
     }
 }
 
+/**
+ * Checks if the new direction is opposite to the current direction.
+ * @param {string} newDirection - The new direction intended.
+ * @param {string} currentDirection - The current direction of the snake.
+ * @returns {boolean} True if the new direction is opposite to the current direction, false otherwise.
+ */
+function isOppositeDirection(newDirection, currentDirection) {
+    return newDirection === 'up' && currentDirection === 'down' ||
+           newDirection === 'down' && currentDirection === 'up' ||
+           newDirection === 'left' && currentDirection === 'right' ||
+           newDirection === 'right' && currentDirection === 'left';
+}
 
 
 
