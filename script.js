@@ -269,7 +269,23 @@ function increaseSpeed() {
   else if (gameSpeedDelay > 25) { gameSpeedDelay -= 1; }
 }
 
-
+/**
+ * Checks for collisions with the game boundaries or with the snake itself. 
+ * Triggers a game reset if a collision is detected.
+ */
+function checkCollision() {
+  const head = snake[0];
+  if (head.x < 1 || head.x > gridSize || head.y < 1 || head.y > gridSize) {
+      saveGameResult(snake.length - 1);
+      resetGame();
+  }
+  for (let i = 1; i < snake.length; i++) {
+      if (head.x === snake[i].x && head.y === snake[i].y) {
+          saveGameResult(snake.length - 1);
+          resetGame();
+      }
+  }   
+}
 
 
 
