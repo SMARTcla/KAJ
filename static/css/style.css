@@ -106,7 +106,30 @@ header {
     top:0;
 }
 
+header h1 {
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
 
+header h1:hover {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+  
+  
+#logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px; 
+}
+  
+h1 {
+    color:#d7b004
+}
 
 
 
