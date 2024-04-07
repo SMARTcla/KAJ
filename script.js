@@ -131,6 +131,40 @@ function generateFood() {
   return { x, y };
 }
 
+/**
+ * Moves the snake in the current direction. If the snake eats food, generates new food,
+ * plays the eating sound, increases speed, and schedules the next move. If not, removes
+ * the last segment to simulate movement.
+ */
+function move() {
+  const head = { ...snake[0] };
+  switch (direction) {
+    case 'up': head.y--; break;
+    case 'down': head.y++; break;
+    case 'left': head.x--; break;
+    case 'right': head.x++; break;
+  }
+
+  // Adds new head based on the current direction
+  snake.unshift(head);
+
+  // Check if the snake eats the food
+  if (head.x === food.x && head.y === food.y) {
+    eatingSound.play();
+    food = generateFood();
+    increaseSpeed();
+    clearInterval(gameInterval);
+    gameInterval = setInterval(() => {
+      move();
+      checkCollision();
+      draw();
+    }, gameSpeedDelay);
+  } else {
+    // Removes the last segment if no food was eaten
+    snake.pop();
+  }
+}
+
 
 
 
