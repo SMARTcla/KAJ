@@ -185,7 +185,39 @@ function startGame() {
   }
 }
 
-
+/**
+ * Handles key press events for starting the game, pausing, and resuming, as well as controlling the snake's direction.
+ * @param {KeyboardEvent} event - The event object representing the key press.
+ */
+function handleKeyPress(event) {
+    if (event.code === 'Enter' && !gameStarted) {
+        if (!isPaused) {
+            gameStarted = true;
+            instructionText.style.display = 'none';
+            logo.style.display = 'none';
+            gameInterval = setInterval(gameLoop, gameSpeedDelay);
+        } else {
+            isPaused = false;
+            gameInterval = setInterval(gameLoop, gameSpeedDelay);
+        }
+    } else if (event.key === 'p' || event.key === 'P') { 
+        if (gameStarted && !isPaused) {
+            clearInterval(gameInterval); 
+            isPaused = true;
+            instructionText.textContent = 'Paused. Press "P" to resume.'; 
+            instructionText.style.display = 'block';
+        } else if (isPaused) {
+            isPaused = false;
+            gameInterval = setInterval(gameLoop, gameSpeedDelay);
+            instructionText.style.display = 'none';
+        }
+    } else if (gameStarted && !isPaused) {
+        const newDirection = getNewDirection(event.key);
+        if (!isOppositeDirection(newDirection, direction)) {
+            direction = newDirection;
+        }
+    }
+}
 
 
 
