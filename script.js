@@ -63,8 +63,27 @@ function pauseGame() {
   }
 }
 
+/**
+ * Clears the game board and redraws the snake and food.
+ * Also updates the current score.
+ */
+function draw() {
+  board.innerHTML = '';
+  drawSnake();
+  drawFood();
+  updateScore();
+}
 
-
+/**
+ * Iterates through each segment of the snake and draws it on the board.
+ */
+function drawSnake() {
+  snake.forEach((segment) => {
+    const snakeElement = createGameElement('div', 'snake');
+    setPosition(snakeElement, segment);
+    board.appendChild(snakeElement);
+  });
+}
 
 
 
