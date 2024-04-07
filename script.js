@@ -219,6 +219,14 @@ function handleKeyPress(event) {
     }
 }
 
+/**
+ * The main game loop that moves the snake, checks for collisions, and redraws the game.
+ */
+function gameLoop() {
+    move();
+    checkCollision();
+    draw();
+}
 
 
 
