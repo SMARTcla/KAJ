@@ -302,7 +302,23 @@ function resetGame() {
   displayLastThreeResults(); 
 }
 
-
+/**
+ * Updates the current score display. If this is the initial score update, 
+ * includes the player's name.
+ * 
+ * @param {boolean} isInitial - Whether this is the initial score update, 
+ * including player name.
+ */
+function updateScore(isInitial = false) {
+  const playerNameInput = document.getElementById('playerName');
+  const playerName = playerNameInput.value.trim();
+  const currentScore = snake.length - 1;
+  if (isInitial) {
+    score.textContent = `${playerName}: ${currentScore.toString().padStart(3, '0')}`;
+  } else {
+    score.textContent = `${playerName}: ${currentScore.toString().padStart(3, '0')}`;
+  }
+}
 
 
 
