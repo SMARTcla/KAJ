@@ -85,6 +85,18 @@ function drawSnake() {
   });
 }
 
+/**
+ * Creates a new game element (snake segment or food) with the specified tag and class.
+ * 
+ * @param {string} tag - The HTML tag for the new element (e.g., 'div').
+ * @param {string} className - The class name to assign to the new element.
+ * @returns {HTMLElement} The newly created game element.
+ */
+function createGameElement(tag, className) {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
 
 
 
