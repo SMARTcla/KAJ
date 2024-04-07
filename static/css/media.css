@@ -65,3 +65,43 @@
    
 }
   
+@media only screen and (max-width: 480px) {
+    
+    html {
+        font-size: 70%;
+    }
+
+    #instruction {
+        top: 5%; 
+        text-align: center;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(20, 10px);
+        grid-template-rows: repeat(20, 10px);
+    }
+
+    .game-board, .form-group {
+        padding: 10px;
+    }
+
+    header {
+        font-size: 14px; 
+    }
+
+    .container {
+        flex-direction: column; 
+    }
+
+    .scores {
+        order: -1; 
+    }
+
+    .controls {
+        display: none;
+    }
+
+    #lastGamesResults {
+        display: none;
+    }
+}
