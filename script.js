@@ -109,6 +109,16 @@ function setPosition(element, position) {
   element.style.gridRow = position.y;
 }
 
+/**
+ * Draws the food element on the game board if the game has started.
+ */
+function drawFood() {
+  if (gameStarted) {
+    const foodElement = createGameElement('div', 'food');
+    setPosition(foodElement, food);
+    board.appendChild(foodElement);
+  }
+}
 
 
 
