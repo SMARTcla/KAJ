@@ -98,7 +98,16 @@ function createGameElement(tag, className) {
   return element;
 }
 
-
+/**
+ * Sets the CSS grid position of a game element (snake segment or food).
+ * 
+ * @param {HTMLElement} element - The game element to position.
+ * @param {{x: number, y: number}} position - The grid coordinates for the element.
+ */
+function setPosition(element, position) {
+  element.style.gridColumn = position.x;
+  element.style.gridRow = position.y;
+}
 
 
 
